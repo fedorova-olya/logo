@@ -1,0 +1,35 @@
+//<Миксины>
+@import "mixins";
+//</Миксины>
+//<Шрифты>
+//$display=swap&subset=cyrillic-ext
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,$display=swap&subset=cyrillic-ext");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+@import "fonts";
+//@import "icons";
+//<Искомые шрифты>
+//</Искомые шрифты>
+//<Шрифты по умолчанию>
+$font-family: "Roboto";
+//</Шрифты по умолчанию>
+//</Шрифты>
+//<Переменные>
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1170px;
+$md1: $maxWidthContainer+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</Переменные>
+//<Обнуление>
+@import "null";
+body {
+    color: #000;
+    font-size: 14px;
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+//</Обнуление>

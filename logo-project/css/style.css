@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,$display=swap&subset=cyrillic-ext");
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+
+@font-face {
+  font-family: "uniSans";
+  font-display: swap;
+  src: url("../fonts/uniSans.woff") format("woff"), url("../fonts/uniSans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  color: #000;
+  font-size: 14px;
+}
+
+body._lock {
+  overflow: hidden;
+}
