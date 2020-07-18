@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 24" width="20" height="24">
+	<defs>
+		<image width="20" height="24" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAMAAADNlS1EAAAAAXNSR0IB2cksfwAAAOFQTFRFGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOWT+LXQAAAEt0Uk5TADd3rNTmwI9VD0LB/94oev30cWpXFe/hCmD+wxalZcedyaKnoFvuEevLCH12Duf83F9t8SEH3fgmAn6DmAXa6CtJkFwewj+ae+2RkT0KWAAAALFJREFUeJxt0dcSgjAQBdAVC5Yo9q5YsfeuqNjL/3+QIWAwO97HM3Mz2V0AMy7J7fH6ZH8AeIIhYicsRWxTosRJLM4sQcQkqaXSCDNZgByyfKEIUEJIyrSuYqxQrGKsUaxjbFBsYtTo/1ttrJ0uQA8j6QMMhiKNxhP66lTE2dwcfrEUcLVmK5EFVDcMtwLurIXqf3B/+LWjwfDkDHNWLlerfeOo87PdneqD41N7ffO26QMZeRwIQ8uRxwAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Хедер">
+		<g id="Регистрация при наведении">
+			<use id="Иконка при наведении" href="#img1" x="0" y="0" />
+		</g>
+	</g>
+</svg>

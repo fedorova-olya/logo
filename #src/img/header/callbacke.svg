@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+	<defs>
+		<image width="20" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAAQJQTFRFGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnOGrnO+uwaawAAAFZ0Uk5Tmu3LFQD0/zTjOM1VpZxn2gQi9lYJQEINISs+AtT6XyU1iLP+fHMe195v4ZLPEIMBCwYIfSrH2LBdqBQnlnlRNwx0Jtn4xGb59dzzO9UWfo8HSpnI5sZ5lWBsAAAA3ElEQVR4nGXP6VLCQBAE4A02DSoCxpi4RAl4IMhhUFE5BA9ARLzl/V/FZKNVLPavqa9qqmeEMILEVrAYEWeYhI5Jhas6rilc1zGlcEPHtMJMVsNNM8QtWNu2gx1bwrFzwt0l9/KARxZQ5D4KPBA4JI+CldJxWaJyUoUs1wTqSTYCPLUsF1m/Cdc6E8A5zQvo7YDf4qWzjEiYvPKXEddkuxMO3d5Nf+DdKsQd2ZLA/UN483AUIcaPnFTkk/qO01/E84w0I6Pxh3h5nfIfBi1vswjjCwi8f3x+Zb6N+Q+DdRbNhtJ5BAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Хедер">
+		<g id="Обратный звонок">
+			<use id="Иконка" href="#img1" x="0" y="0" />
+		</g>
+	</g>
+</svg>

@@ -14,9 +14,9 @@ $font-family: "Roboto";
 //</Шрифты по умолчанию>
 //</Шрифты>
 //<Переменные>
-$minWidth: 320px;
-$maxWidth: 1920px;
-$maxWidthContainer: 1170px;
+$minWidth: 328px;
+$maxWidth: 1400px;
+$maxWidthContainer: 1180px;
 $md1: $maxWidthContainer+12;
 $md2: 991.98;
 $md3: 767.98;
@@ -33,3 +33,62 @@ body {
 }
 
 //</Обнуление>
+//<Оболочка>
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &._loaded {}
+}
+
+//</Оболочка>
+//<Основная сетка>
+._container {
+    max-width: $maxWidthContainer +px;
+    margin: 0 auto;
+    padding: 0 20px;
+    //<не используемые брекпоинты в этом макете>
+    // @media (max-width: $md1 + px) {
+    //     max-width: 970px;
+    // }
+    // @media (max-width: $md2+px) {
+    //     max-width: 750px;
+    // }
+    // @media (max-width: $md3+px) {
+    //     max-width: none;я
+    //     padding: 0 10px;
+    // } 
+    //</не используемые брекпоинты в этом макете>
+}
+
+//</Основная сетка>
+
+//<Подключение файлов UI стилей, форм и готовых классов>
+@import "form";
+@import "ui";
+
+//</Подключение файлов UI стилей, форм и готовых классов>
+
+//<Подключение файлов стилей, страниц и элементов>
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+
+
+
+
+
+
+//</Подключение файлов стилей, страниц и элементов>
+
+//<Основной блок>
+.page{
+    flex: 1 1 auto;
+}
+//</Основной блок>

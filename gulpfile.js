@@ -103,7 +103,7 @@ function fonts(params) {
     return src(path.src.fonts)
         .pipe(ttf2woff2())
         .pipe(dest(path.build.fonts));
-}
+};
 gulp.task('otf2ttf', function() {
     return src([source_folder + '/fonts/*.otf'])
         .pipe(fonter({
