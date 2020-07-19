@@ -10,7 +10,7 @@
 //<Искомые шрифты>
 //</Искомые шрифты>
 //<Шрифты по умолчанию>
-$font-family: "Roboto";
+$font-family: "Roboto", san-serif;
 //</Шрифты по умолчанию>
 //</Шрифты>
 //<Переменные>
@@ -27,6 +27,7 @@ $md4: 479.98;
 body {
     color: #000;
     font-size: 14px;
+    font-family: $font-family;
     &._lock {
         overflow: hidden;
     }

@@ -40,7 +40,7 @@ let {
     uglify = require('gulp-uglify-es').default,
     babel = require('gulp-babel'),
     imagemin = require('gulp-imagemin'),
-    wwebp = require('gulp-webp'),
+    webp = require('gulp-webp'),
     wwebphtml = require('gulp-webp-html'),
     webpcss = require('gulp-webpcss'),
     ttf2woff = require('gulp-ttf2woff'),
@@ -84,7 +84,7 @@ function js() {
 }
 
 function images() {
-    return src(path.src.img).pipe(wwebp({
+    return src(path.src.img).pipe(webp({
         quality: 70
     })).pipe(dest(path.build.img)).pipe(src(path.src.img)).pipe(imagemin({
         progressive: true,
