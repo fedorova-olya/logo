@@ -37,77 +37,56 @@
 //         }
 //     }
 // }
-
 .header {
-    background: url('../img/header/bg-header.jpg') top no-repeat;
-
-
-&__top {}
+    //background: url("/../img/header/bg-header.png") top no-repeat;
+    background-color: blueviolet;
+    width: 100%;
+    height: 130px;
+    margin: 0 auto;
 }
-.top-header {}
 
-.header__content {}
+.top-header {
+    &__content {
+        display: flex;
+    }
+    &__column {
+        flex: 0 1 50%;
+        &_logo {
+            flex: 0 0 190px;
+            text-align: center;
+        }
+    }
+}
 
-._container {}
-
-.top-header__column {}
-
-.top-header__menu {}
-
-.menu {}
-
-.menu__icon {}
-
-.icom-menu {}
-
-.menu__body {}
-
-.menu__list {}
-
-.menu__link {}
-
-.top-header__logo {}
-
-.top-header__contacts {}
-
-.contacts-header {}
-
-.contacts-header__column {}
-
-.contacts-header__item {}
-
-.contacts-headet__item_icon {}
-
-.contacts-header__label {}
-
-.contacts-header__phone {}
-
-.header__bottom {}
-
-.bottom-header {}
-
-.bottom-header__container {}
-
-.bottom-header__column {}
-
-.bottom-header__actions {}
-
-.actions-header {}
-
-.actions-header__login {}
-
-.actions-header__reg {}
-
-.actions-header__email {}
-
-.bottom-header__info {}
-
-.info-header {}
-
-.info-header__column {}
-
-.info-header__callback {}
-
-.info-header__schedule {}
-
-.info-header__bag {}
+// ._container {}
+// .top-header__column {}
+// .top-header__menu {}
+// .menu {}
+// .menu__icon {}
+// .icom-menu {}
+// .menu__body {}
+// .menu__list {}
+// .menu__link {}
+// .top-header__logo {}
+// .top-header__contacts {}
+// .contacts-header {}
+// .contacts-header__column {}
+// .contacts-header__item {}
+// .contacts-headet__item_icon {}
+// .contacts-header__label {}
+// .contacts-header__phone {}
+// .header__bottom {}
+// .bottom-header {}
+// .bottom-header__container {}
+// .bottom-header__column {}
+// .bottom-header__actions {}
+// .actions-header {}
+// .actions-header__login {}
+// .actions-header__reg {}
+// .actions-header__email {}
+// .bottom-header__info {}
+// .info-header {}
+// .info-header__column {}
+// .info-header__callback {}
+// .info-header__schedule {}
+// .info-header__bag {}

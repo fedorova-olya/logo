@@ -17,7 +17,7 @@ $font-family: "Roboto", san-serif;
 $minWidth: 328px;
 $maxWidth: 1400px;
 $maxWidthContainer: 1180px;
-$md1: $maxWidthContainer+12;
+$md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
@@ -47,7 +47,7 @@ body {
 //</Оболочка>
 //<Основная сетка>
 ._container {
-    max-width: $maxWidthContainer +px;
+    max-width: $maxWidthContainer;
     margin: 0 auto;
     padding: 0 20px;
     //<не используемые брекпоинты в этом макете>

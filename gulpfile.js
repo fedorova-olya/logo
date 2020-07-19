@@ -40,9 +40,10 @@ let {
     uglify = require('gulp-uglify-es').default,
     babel = require('gulp-babel'),
     imagemin = require('gulp-imagemin'),
-    webp = require('gulp-webp'),
-    wwebphtml = require('gulp-webp-html'),
-    webpcss = require('gulp-webpcss'),
+    webp = require("gulp-webp"),
+    webpcss = require("gulp-webpcss"),
+    webphtml = require("gulp-webp-html"),
+    svgSprite = require("gulp-svg-sprite"),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
     fonter = require('gulp-fonter');
@@ -58,22 +59,47 @@ function browserSync(params) {
 }
 
 function html() {
-    return src(path.src.html).pipe(wwebphtml()).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browsersync.stream())
+    return src(path.src.html)
+        .pipe(fileinclude())
+        .pipe(webphtml())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream())
 }
 
 function css() {
-    return src(path.src.css).pipe(scss({
-        outputStyle: 'expanded'
-    })).pipe(group_media()).pipe(autoprefixer({
-        overrideBrowserlist: ['last 5 version'],
-        cascade: true
-    })).pipe(webpcss({
-        webpClass: '.webp',
-        noWebpClass: '.no-webp'
-    })).pipe(dest(path.build.css)).pipe(clean_css()).pipe(rename({
-        extname: '.min.css'
-    })).pipe(dest(path.build.css)).pipe(browsersync.stream())
+    return src(path.src.css)
+        .pipe(
+            scss({
+                outputStyle: "expanded"
+            })
+        )
+        .pipe(group_media())
+        .pipe(
+            autoprefixer({
+                grid: "autoplace",
+                overrideBrowserslist: [
+                    "last 5 version",
+                    "> 1%",
+                    "IE 10"
+                ],
+                cascade: true
+            })
+        )
+        .pipe(webpcss({
+            webpClass: '.webp',
+            noWebpClass: '.no-webp'
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(clean_css())
+        .pipe(
+            rename({
+                extname: ".min.css"
+            })
+        )
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream())
 }
+
 
 function js() {
     return src(path.src.js).pipe(fileinclude()).pipe(dest(path.build.js)).pipe(uglify()).pipe(babel({
@@ -84,16 +110,24 @@ function js() {
 }
 
 function images() {
-    return src(path.src.img).pipe(webp({
-        quality: 70
-    })).pipe(dest(path.build.img)).pipe(src(path.src.img)).pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{
-            removeViewBox: false
-        }],
-        interlaced: true,
-        optimizationLevel: 3 //0 to 7
-    })).pipe(dest(path.build.img)).pipe(browsersync.stream())
+    return src(path.src.img)
+        .pipe(
+            webp({
+                quality: 70
+            })
+        )
+        .pipe(dest(path.build.img))
+        .pipe(src(path.src.img))
+        .pipe(
+            imagemin({
+                progressive: true,
+                svgoOlugins: [{ removeViewBox: false }],
+                interlaced: true,
+                optimizationLevel: 3 // 0 to 7 
+            })
+        )
+        .pipe(dest(path.build.img))
+        .pipe(browsersync.stream())
 }
 
 function fonts(params) {
@@ -131,6 +165,20 @@ function fontsStyle(params) {
         })
     }
 }
+
+gulp.task("svgSprite", function() {
+    return gulp.src([source_folder + '/iconsprite/*.svg'])
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../icons/icons.svg",
+                    example: true
+                }
+            },
+        }))
+        .pipe(dest(path.build.img))
+})
+
 
 function cd() {}
 
