@@ -22,11 +22,7 @@
 //     }
 // }
 .header {
-    //background: url("./../img/header/bg-header.png") top no-repeat;
-    background-color: blueviolet;
-    width: 100%;
-    height: 130px;
-    margin: 0 auto;
+    background: url("./../img/header/bg-header.webp") top no-repeat;
     // .header__top
     &__top {}
     // .header__bottom
@@ -38,6 +34,7 @@
     &__content {
         display: flex;
         align-items: center;
+        height: 90px;
     }
     // .top-header__column
     &__column {
@@ -65,21 +62,21 @@
     &__body {}
     // .menu__list
     &__list {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 130px 130px 180px;
         li {
-            flex: 0 1 33.33%;
+            margin: 1px 0;
         }
     }
     // .menu__link
     &__link {
         //width: 99px;
-        height: 27px;
+        min-height: 27px;
         font-family: "Play";
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        padding: 0 22px;
+        padding: 3px 22px;
         text-decoration: underline;
         color: #fff;
         @media (min-width: $md2 + px) {
@@ -99,20 +96,35 @@
     align-items: center;
     // .contacts-header__column
     &__column {
+        padding: 0 30px;
         border-right: 1px solid #fff;
         &:last-child {
             border: none;
         }
     }
     // .contacts-header__item
-    &__item {}
+    &__item {
+        &_icon {
+            padding-left: 37px;
+            background: url("../img/header/phone.svg") left no-repeat;
+        }
+    }
     // .contacts-header__label
-    &__label {}
+    &__label {
+        font-size: 12px;
+        font-weight: 300;
+        margin-bottom: 5px;
+        color: #fff;
+    }
     // .contacts-header__phone
-    &__phone {}
+    &__phone {
+        font-size: 18px;
+        font-weight: 900;
+        color: #fff;
+    }
 }
 
-.contacts-headet {
+.contacts-header {
     // .contacts-headet__item
     &__item {
         // .contacts-headet__item_icon
@@ -122,9 +134,16 @@
 
 .bottom-header {
     // .bottom-header__container
-    &__container {}
+    &__container {
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     // .bottom-header__column
-    &__column {}
+    &__column {
+        flex: 0 1 calc(50% - 95px);
+    }
     // .bottom-header__actions
     &__actions {}
     // .bottom-header__info
@@ -132,21 +151,91 @@
 }
 
 .actions-header {
+    display: flex;
+    align-items: center;
+    li {
+        margin: 0px 54px 0px 0px;
+    }
+    &__login,
+    &__reg,
+    &__email {
+        padding: 0 0 0 36px;
+        display: inline-block;
+        line-height: 24px;
+        span {
+            border-bottom: 1px dotted;
+        }
+    }
     // .actions-header__login
-    &__login {}
+    &__login {
+        background: url('../img/header/in.svg') left no-repeat;
+        color: #999;
+    }
     // .actions-header__reg
-    &__reg {}
+    &__reg {
+        background: url('../img/header/registration.svg') left no-repeat;
+        color: #1ab9ce;
+    }
     // .actions-header__email
-    &__email {}
+    &__email {
+        background: url('../img/header/email.svg') left no-repeat;
+        color: #1ab9ce;
+        line-height: 13px;
+    }
 }
 
 .info-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     // .info-header__column
-    &__column {}
+    &__column {
+        padding: 0 54px 0 0;
+        @media (max-width: $maxWidthContainer + px) {
+            padding: 0px 54px 0px 0px;
+        }
+    }
     // .info-header__callback
-    &__callback {}
+    &__callback {
+        background: url('../img/header/callbacke.svg') left no-repeat;
+        display: inline-block;
+        color: #1ab9ce;
+        line-height: 20px;
+        padding: 0 0 0 32px;
+        span {
+            border-bottom: 1px dashed;
+        }
+    }
     // .info-header__schedule
-    &__schedule {}
+    &__schedule {
+        background: url('../img/header/calendar.svg') left no-repeat;
+        padding-left: 37px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 18px;
+        color: #999;
+        span {
+            font-weight: 900;
+        }
+    }
     // .info-header__bag
-    &__bag {}
+    &__bag {
+        width: 43px;
+        height: 43px;
+        display: inline-block;
+        background: #1ab9ce url('../img/basket.svg') no-repeat center;
+        border-radius: 50%;
+        position: relative;
+        span {
+            padding: 0 11px;
+            border-radius: 20px;
+            line-height: 18px;
+            background-color: #f57f38;
+            position: absolute;
+            right: 0;
+            transform: translate(50%, 0px);
+            color: #fff;
+            font-weight: 700;
+        }
+    }
 }
