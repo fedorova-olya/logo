@@ -12,12 +12,80 @@
     <div class="wrapper">
         @@include('_header.html', {})
         <main class="page">
+            <div class="page__container _container">
+                <aside class="page__side">
+                    <nav class="page__menu menu-page">
+                        <div class="menu-page__header">
+                            <div class="menu-page__title">Каталог товаров</div>
+                            <div class="menu-page__burger">
+                                <div class="menu-page__lines">
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-page__body">
+                            <ul class="manu-page__list">
+                                <li>
+                                    <a data-item="0" href="" class="menu-page__link menu-page__link_parent">Беговые дорожки</a>
+                                </li>
+                                <li>
+                                    <a data-item="1" href="" class="menu-page__link menu-page__link_parent">Элиптические тренажеры</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Велотренажеры</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Пробные тренажеры</a>
+                                </li>
+                                <li>
+                                    <a data-item="2" href="" class="menu-page__link menu-page__link_parent">Вибротренажеры</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Теннисные столы</a>
+                                </li>
+                                <li>
+                                    <a data-item="3" href="" class="menu-page__link menu-page__link_parent">Баскетбол</a>
+                                </li>
+                                <li>
+                                    <a data-item="4" href="" class="menu-page__link menu-page__link_parent">Массажные кресла</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Массажные столы</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Силовые тренажеры</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Батуты</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Детские городки</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Дачная мебель</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Уличные спортивные комплексы</a>
+                                </li>
+                                <li>
+                                    <a href="" class="menu-page__link">Аксессуары</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-page__submenu submenu-page">
 
+                        </div>
+                    </nav>
+                </aside>
+                <div class="page__contant"></div>
+            </div>
         </main>
         @@include('_footer.html', {})
     </div>
     @@include('_popup.html', {}) @@include('_js.html', {})
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
     <script src="./js/script.min.js"></script>
 </body>
