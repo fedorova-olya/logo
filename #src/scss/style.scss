@@ -59,11 +59,75 @@ body {
     height: 43px;
 }
 
+.btn {
+    display: inline-flex;
+    padding: 0 25px;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease 0s;
+    height: 39px;
+    background-color: #f68038;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 18px;
+    text-transform: uppercase;
+    border: none;
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: #b86829;
+        }
+    }
+}
+
+.input {
+    border-radius: 0 !important;
+    width: 100%;
+    display: block;
+    padding: 0 20px;
+    border: none;
+}
+
+.checkbox {
+    position: relative;
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        &:checked+.checkbox__text:before {
+            background: url('../img/icons/check.svg') center no-repeat;
+        }
+    }
+    &__text {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        font-size: 16px;
+        color: #666;
+        letter-spacing: -0.3px;
+        line-height: calc(20/16);
+        cursor: pointer;
+        &:before {
+            align-self: flex-start;
+            margin: 0px 14px 0px 0px;
+            flex: 0 0 20px;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 18px;
+            background: #fff;
+            border: 1px solid #a7a9ac;
+        }
+    }
+}
+
 //</Готовые классы>
 //</Оболочка>
 //<Основная сетка>
 ._container {
-    max-width: $maxWidthContainer;
+    max-width: $maxWidthContainer+px;
     margin: 0 auto;
     padding: 0 20px;
     //<не используемые брекпоинты в этом макете>
@@ -101,6 +165,7 @@ body {
     // .page__container
     &__container {
         display: flex;
+        min-height: 360px;
     }
     // .page__side
     &__side {
@@ -113,6 +178,8 @@ body {
         flex: 1 1 auto;
         padding: 0 0 0 30px;
     }
+    // .page__search
+    &__search {}
 }
 
 .menu-page {
@@ -367,6 +434,110 @@ body {
             font-size: 18px;
         }
         //margin-bottom: 10px;
+    }
+}
+
+.search-page {
+    display: flex;
+    position: relative;
+    // .search-page__select
+    &__select {
+        cursor: pointer;
+        display: flex;
+        padding: 0 14px;
+        align-items: center;
+        background-color: #f3f3f3;
+        &:before {
+            content: '';
+            width: 17px;
+            height: 17px;
+            background: url('../img/search-icon.svg') left no-repeat;
+        }
+        &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: url('../img/search-arrow.svg') right no-repeat;
+        }
+    }
+    // .search-page__title
+    &__title {
+        display: flex;
+        align-items: center;
+        >span {
+            margin: 0 15px;
+            color: #666;
+            border-bottom: 1px dashed;
+        }
+    }
+    // .search-page__categories
+    &__categories {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+    // .search-page__input
+    &__input {
+        border-top: 2px solid #f2f2f2;
+        border-bottom: 2px solid #f2f2f2;
+        flex: 1 1 auto;
+        .input {
+            height: 100%;
+        }
+    }
+    // .search-page__btn
+    &__btn {}
+}
+
+.categories-search {
+    background-color: #fff;
+    display: flex;
+    border: 1px solid #fefefe;
+    &:after {
+        content: "";
+        background-color: #f68038;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+    // .categories-search__column
+    &__column {
+        flex: 0 1 33.333%;
+        padding: 24px 25px;
+        border-right: 1px solid #f3f3f3;
+        &:last-child {
+            border: 0;
+        }
+    }
+    // .categories-search__list
+    &__list {
+        li {
+            margin: 0px 0px 20px 0px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+    // .categories-search__checkbox
+    &__checkbox {
+        .checkbox__input {
+            &:checked+.checkbox__text {
+                color: #f68038;
+            }
+        }
+        .checkbox__text {
+            color: #999;
+            &::before {
+                display: none;
+            }
+        }
+    }
+    // .categories-search__link
+    &__link {
+        color: #999;
     }
 }
 
