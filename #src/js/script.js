@@ -29,7 +29,36 @@ $(document).ready(function() {
     });
     //</бургер submenu>
     //<.Бургер на нативном js>
+    //<Выпадающий список поиска>
+    let searchSelect = document.querySelector('.search-page__select');
+    let categorysSearch = document.querySelector('.categorys-search');
+    searchSelect.addEventListener('click', function(e) {
+            categorysSearch.classList.toggle('active-search');
+            //_slideToggle(categorysSearch);
 
+        })
+        //</Выпадающий список поиска>
+        //<Выборка по списку поиска>
+    let checkboxCategorys = document.querySelectorAll('.categorys-search__checkbox');
+
+    for (let index = 0; index < checkboxCategorys.length; index++) {
+        const checkboxCategory = checkboxCategorys[index];
+        checkboxCategory.addEventListener('change', function(e) {
+            checkboxCategory.classList.toggle('active');
+
+            let checkboxActiveCategory = document.querySelectorAll('.categorys-search__checkbox.active')
+
+            if (checkboxActiveCategory.length > 0) {
+                searchSelect.classList.add('_categories');
+                let searchQuantity = searchSelect.querySelector('.search-page__quantity');
+                searchQuantity.innerHTML = searchQuantity.getAttribute('data-text') + ' ' + checkboxActiveCategory.length
+            } else {
+                searchSelect.classList.remove('_categories');
+
+            }
+        })
+    }
+    //</Выборка по списку поиска>
 
 
 

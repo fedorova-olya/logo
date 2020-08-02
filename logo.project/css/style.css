@@ -834,27 +834,43 @@ body.lock {
 
 .search-page__select:after {
   content: '';
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
   width: 10px;
   height: 10px;
   background: url("../img/search-arrow.svg") right no-repeat;
 }
 
+.search-page__select._categories span {
+  display: none;
+}
+
+.search-page__select._categories span:last-child {
+  display: block;
+}
+
 .search-page__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 300;
 }
 
-.search-page__title > span {
+.search-page__title span {
   margin: 0 15px;
-  color: #666;
   border-bottom: 1px dashed;
 }
 
-.search-page__categories {
+.search-page__title span:last-child {
+  display: none;
+}
+
+.search-page__categorys {
   position: absolute;
   top: 100%;
   left: 0;
@@ -873,15 +889,17 @@ body.lock {
   height: 100%;
 }
 
-.categories-search {
+.categorys-search {
   background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border: 1px solid #fefefe;
+  display: none;
 }
 
-.categories-search:after {
+.categorys-search.active-search {
+  display: block;
+}
+
+.categorys-search:after {
   content: "";
   background-color: #f68038;
   height: 4px;
@@ -891,7 +909,13 @@ body.lock {
   left: 0;
 }
 
-.categories-search__column {
+.categorys-search__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.categorys-search__column {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
@@ -899,31 +923,31 @@ body.lock {
   border-right: 1px solid #f3f3f3;
 }
 
-.categories-search__column:last-child {
+.categorys-search__column:last-child {
   border: 0;
 }
 
-.categories-search__list li {
+.categorys-search__list li {
   margin: 0px 0px 20px 0px;
 }
 
-.categories-search__list li:last-child {
+.categorys-search__list li:last-child {
   margin: 0;
 }
 
-.categories-search__checkbox .checkbox__input:checked + .checkbox__text {
+.categorys-search__checkbox .checkbox__input:checked + .checkbox__text {
   color: #f68038;
 }
 
-.categories-search__checkbox .checkbox__text {
+.categorys-search__checkbox .checkbox__text {
   color: #999;
 }
 
-.categories-search__checkbox .checkbox__text::before {
+.categorys-search__checkbox .checkbox__text::before {
   display: none;
 }
 
-.categories-search__link {
+.categorys-search__link {
   color: #999;
 }
 

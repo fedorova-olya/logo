@@ -455,23 +455,36 @@ body {
         }
         &:after {
             content: '';
+            transition: all .3s ease 0s;
             width: 10px;
             height: 10px;
             background: url('../img/search-arrow.svg') right no-repeat;
         }
+        &._categories {
+            span {
+                display: none;
+                &:last-child {
+                    display: block;
+                }
+            }
+        }
     }
     // .search-page__title
     &__title {
-        display: flex;
         align-items: center;
-        >span {
+        color: #666;
+        display: flex;
+        font-weight: 300;
+        span {
             margin: 0 15px;
-            color: #666;
             border-bottom: 1px dashed;
+            &:last-child {
+                display: none;
+            }
         }
     }
-    // .search-page__categories
-    &__categories {
+    // .search-page__categorys
+    &__categorys {
         position: absolute;
         top: 100%;
         left: 0;
@@ -490,10 +503,13 @@ body {
     &__btn {}
 }
 
-.categories-search {
+.categorys-search {
     background-color: #fff;
-    display: flex;
     border: 1px solid #fefefe;
+    display: none;
+    &.active-search {
+        display: block;
+    }
     &:after {
         content: "";
         background-color: #f68038;
@@ -503,7 +519,11 @@ body {
         width: 100%;
         left: 0;
     }
-    // .categories-search__column
+    // .categorys-search__row
+    &__row {
+        display: flex;
+    }
+    // .categorys-search__column
     &__column {
         flex: 0 1 33.333%;
         padding: 24px 25px;
@@ -512,7 +532,7 @@ body {
             border: 0;
         }
     }
-    // .categories-search__list
+    // .categorys-search__list
     &__list {
         li {
             margin: 0px 0px 20px 0px;
@@ -521,7 +541,7 @@ body {
             }
         }
     }
-    // .categories-search__checkbox
+    // .categorys-search__checkbox
     &__checkbox {
         .checkbox__input {
             &:checked+.checkbox__text {
@@ -535,7 +555,7 @@ body {
             }
         }
     }
-    // .categories-search__link
+    // .categorys-search__link
     &__link {
         color: #999;
     }
