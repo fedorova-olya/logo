@@ -30,15 +30,15 @@ $(document).ready(function() {
     //</бургер submenu>
     //<.Бургер на нативном js>
     //<Выпадающий список поиска>
-    let searchSelect = document.querySelector('.search-page__select');
+    let searchSelect = document.querySelector('.search-page__title');
     let categorysSearch = document.querySelector('.categorys-search');
     searchSelect.addEventListener('click', function(e) {
-            categorysSearch.classList.toggle('active-search');
-            //_slideToggle(categorysSearch);
+        categorysSearch.classList.toggle('active-search');
+        //_slideToggle(categorysSearch);
 
-        })
-        //</Выпадающий список поиска>
-        //<Выборка по списку поиска>
+    })
+    //</Выпадающий список поиска>
+    //<Выборка по списку поиска>
     let checkboxCategorys = document.querySelectorAll('.categorys-search__checkbox');
 
     for (let index = 0; index < checkboxCategorys.length; index++) {
@@ -77,8 +77,118 @@ $(document).ready(function() {
     }
 
     //</выпвдвющее боковое меню>
-});
 
+    //<Bild slider>
+    let sliders = document.querySelectorAll('._swiper');
+    if (sliders) {
+        for (let index = 0; index < sliders.length; index++) {
+            const slider = sliders[index];
+            if (!slider.classList.contains('swiper-bild')) {
+                let slider_items = slider.children;
+                if (slider_items) {
+                    for (let index = 0; index < slider_items.length; index++) {
+                        const el = slider_items[index];
+                        el.classList.add('swiper-slide');
+                    }
+                }
+                let slider_content = slider.innerHTML;
+                let slider_wrapper = document.createElement('div');
+                slider_wrapper.classList.add('swiper-wrapper');
+                slider_wrapper.innerHTML = slider_content;
+                slider.innerHTML = '';
+                slider.appendChild(slider_wrapper);
+                slider.classList.add('swiper-bild');
+            }
+            if (slider.classList.contains('_gallery')) {
+                //slider.data('lightGallery').destroy(true);
+            }
+        }
+        sliders_bild_callback();
+    }
+
+    function sliders_bild_callback() {}
+
+
+    if (document.querySelector('.mainslider')) {
+        new Swiper('.mainslider__body', {
+            // effect: 'fade',
+            // autoplay:{
+            // 	delay: 3000,
+            // 	disableOnInteraction: false,
+            // },
+            observer: true,
+            observerParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            autoHeight: true,
+            //effect: 'fade',
+            speed: 800,
+            //touchRatio: 0,
+            //simuLateTouch: false,
+            loop: true,
+            //loopedSlides: 1,
+            //preLoadImages: true,
+            //Lazy: true,
+            // //Dots
+            pagination: {
+                el: '.mainslider__dotts',
+                clickable: true,
+            },
+            fadeEffect: {
+                crossFade: true
+            },
+            // a11y: {
+            //     notificationClass: 'visually_hidden'
+            // }
+            // navigation:{
+            // 	nextEl:'.about__more .more__item_next',
+            // 	prevEl:'.about__more .more__item_prev',
+            // },
+            // breakpoints:{
+            // 	320:{
+            // 		slidesPerView: 1,
+            // 		spaceBetween: 0,
+            // 		autoHeight: true,
+            // 	},
+            // 	768:{
+            // 		slidesPerView: 2,
+            // 		spaceBetween: 20,
+            // 	},
+            // 	992:{
+            // 		slidesPerView: 3,
+            // 		spaceBetween: 20,
+            // 	},
+            // 	1268:{
+            // 		slidesPerView: 4,
+            // 		spaceBetween: 30,
+            // 	},
+            // },
+            // on:{
+            // lazyImageReady: function() {
+            //     ibg();
+            // },
+            // }
+        });
+        let mainSliderImages = document.querySelectorAll('.mainslider__image');
+        let mainSliderDotts = document.querySelectorAll('.mainslider__dotts .swiper-pagination-bullet');
+        for (let index = 0; index < mainSliderImages.length; index++) {
+            const mainSliderImage = mainSliderImages[index].querySelector('img').getAttribute('src');
+            mainSliderDotts[index].style.backgroundImage = "url('" + mainSliderImage + "')";
+        }
+    }
+
+    // 
+    // Js to position an element
+    // var old_parent = document.getElementById("old-parent");
+    // var last_child = old_parent.node.lastChild();
+    // console.log(last_child);
+    // var newParent = document.getElementById("new-parent");
+    // while (oldParent.childNodes > )
+
+
+    //</Bild slider>
+
+});
 //<Динамическая адаптация>
 (function() {
     let originalPositions = [];
@@ -198,17 +308,24 @@ $(document).ready(function() {
     //Сортировка объекта
     function dynamicAdaptSort(arr) {
         arr.sort(function(a, b) {
-            if (a.breakpoint > b.breakpoint) { return -1 } else { return 1 }
+            if (a.breakpoint > b.breakpoint) {
+                return -1
+            } else {
+                return 1
+            }
         });
         arr.sort(function(a, b) {
-            if (a.place > b.place) { return 1 } else { return -1 }
+            if (a.place > b.place) {
+                return 1
+            } else {
+                return -1
+            }
         });
     }
     //Дополнительные сценарии адаптации
     function customAdapt() {
         //const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     }
-
 
 }());
 //</Динамическая адаптация>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="14" height="14">
+	<defs>
+		<image width="14" height="14" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAAXNSR0IB2cksfwAAAHtQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////0GAZzgAAACl0Uk5TAV0cABFgBoT/uRMSrJLDtg0g4wQbxBAy4ZMDwrQCMBi6NA+9CCvglmvE/7qoAAAAb0lEQVR4nGXPyRaCMAwF0GIAX8HKPJRBBgv6/19IsCtqdvckJ3kRwrsRkR+EdJa4Q0YUP6Asn0CSZjmgipNlBci6aQHdMSnqgWF8sZVg0sT9OV14XodMWrn/NtsOfP55Hb6ucg45MZyQ9oX4a348AN9DCbOYAmBTAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Слайдер">
+		<g id="Кнопка подробнее">
+			<use id="Слой 8 копия 6" href="#img1" x="0" y="0" />
+		</g>
+	</g>
+</svg>
