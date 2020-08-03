@@ -63,18 +63,54 @@ $(document).ready(function() {
 
 
     //<выпвдвющее боковое меню>
-    let menuParents = document.querySelectorAll('.menu-page__parent');
-
-    for (let index = 0; index < menuParents.length; index++) {
-        const menuParent = menuParents[index];
-        menuParent.addEventListener('mouseenter', function(e) {
-            menuParent.classList.add('_active');
-        });
-        menuParent.addEventListener('mouseleave', function(e) {
-            menuParent.classList.remove('_active');
-        })
-
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+    if (isMobile.any()) {
+        //  document.querySelector('body').classList.add('_touch');
+        let menuParents = document.querySelectorAll('.menu-page__parent>a');
+        for (let index = 0; index < menuParents.length; index++) {
+            const menuParent = menuParents[index];
+            menuParent.addEventListener('click', function(e) {
+                menuParent.parentElement.classList.toggle('active');
+                e.preventDefault();
+            })
+        }
+    } else {
+        let menuParents = document.querySelectorAll('.menu-page__parent');
+        for (let index = 0; index < menuParents.length; index++) {
+            const menuParent = menuParents[index];
+            menuParent.addEventListener('mouseenter', function(e) {
+                menuParent.classList.add('active');
+            });
+            menuParent.addEventListener('mouseleave', function(e) {
+                menuParent.classList.remove('active');
+            });
+        }
     }
+    // if (document.getElementById('icon-menu')) {
+    //     document.getElementById('icon-menu').onclick = () => {
+    //         document.getElementById('icon-menu').classList.toggle('active')
+    //         document.getElementById('menu__body').classList.toggle('active')
+    //     };
+    // }
 
     //</выпвдвющее боковое меню>
 
