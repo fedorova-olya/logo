@@ -10,16 +10,27 @@
 }
 
 @mixin adaptiv-font ($pcSize,
-$mobSize,
-$maxSize) {
+    $mobSize,
+    $maxSize) {
     $addSize: pcSize - mobSize;
+
     @if $maxSize==1 {
         font-size: $pcSize + px;
+
         @media(max-width: #{$maxWidthContainer + px}) {
             font-size: calc(#{$mobSize + px}+#{$addSize}*((100vw - 320px) / #{$maxWidthContainer - 320}));
         }
     }
+
     @else {
         font-size: calc(#{$mobSize + px}+#{$addSize} * ((100vw - 320px) / #{$maxWidth -320}));
     }
+}
+
+@mixin title {
+    color: #dadada;
+    font-family: "UniSans";
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
 }

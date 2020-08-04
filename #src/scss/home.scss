@@ -5,8 +5,6 @@
         .swiper-wrapper {
             display: inline-flex;
         }
-
-        //overflow: hidden;
     }
 
     // .mainslider__slide
@@ -175,4 +173,90 @@
     &__text-3 {
         color: #979797;
     }
+}
+
+.products-slider {
+    ._swiper {
+
+        //overflow: hidden;
+        >div {
+            height: 100%;
+            width: 100%;
+            box-sizing: content-box;
+            //display: flex;
+            position: relative;
+        }
+    }
+
+    // .products-slider__header
+    &__header {
+        display: flex;
+        margin: 0 0 30px 0;
+    }
+
+    // .products-slider__title
+    &__title {
+        flex: 1 1 auto;
+        @include title;
+    }
+
+    // .products-slider__item
+    &__item {
+        display: flex;
+
+        .swiper-wrapper {
+            //overflow: hidden;
+            //display: flex;
+        }
+
+        ._swiper.swiper-container-autoheight>div {
+            align-items: flex-start;
+        }
+    }
+
+    // .products-slider__control
+    &__control {
+        display: flex;
+        align-items: center;
+    }
+
+    // .products-slider__arrow
+    &__arrow {
+        background: url('../img/navigation/slider-arrow-right.svg') 0 0 no-repeat;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+
+        @media (min-width: $md2+px) {
+            &:hover {
+                background: url('../img/navigation/slider-arrow-left.svg') 0 0 no-repeat;
+            }
+        }
+
+        // .products-slider__arrow_prev
+        &_prev {
+            transform: rotate(-180deg);
+
+            @media (min-width: $md2+px) {
+                &:hover {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        // .products-slider__arrow_next
+        &_next {
+            @media (min-width: $md2+px) {
+                &:hover {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    // .products-slider__info
+    &__info {
+        padding: 0 20px;
+    }
+
 }
